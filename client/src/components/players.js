@@ -20,7 +20,7 @@ export class Players extends React.Component {
     
     render() {
         return(
-            <div>
+            <div data-testid="player">
                 {this.state.player.map(p => 
                     <div className="players" key={p.id}>
                     <h2>Name: {p.name}</h2>

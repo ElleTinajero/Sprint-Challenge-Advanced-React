@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="appContainer">
-      <div className="navContainer">
+    <div  className="appContainer">
+      <div data-testid="navbar" className="navContainer">
         <Navbar/>
       </div>
       <div>
