@@ -22,11 +22,11 @@ export class Players extends React.Component {
         return(
             <div>
                 {this.state.player.map(p => 
-                    <li key={p.id}>
+                    <div className="players" key={p.id}>
                     <h2>Name: {p.name}</h2>
                     <h2>Country: {p.name}</h2>
                     <h2>Searches: {p.searches}</h2>
-                    </li>)}
+                    </div>)}
             </div>
         )
     }

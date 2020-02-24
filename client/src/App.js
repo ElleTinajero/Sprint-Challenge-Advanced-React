@@ -1,11 +1,17 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import {Players} from "./components/players";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
-      <Players/>
+    <div className="appContainer">
+      <div className="navContainer">
+        <Navbar/>
+      </div>
+      <div>
+        <Players/>
+      </div>
     </div>
   )
 }
