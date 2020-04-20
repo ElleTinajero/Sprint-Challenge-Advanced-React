@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import * as rt1 from '@testing-library/react';
+import { shallow } from 'enzyme'; //renders a component but not subcomponents, testing in isolation
 import App from './App';
+import { Players } from './components/players';
 import '@testing-library/jest-dom/extend-expect';
+//CI=true npm test
+//this will run all your tests without having to have the watcher open
+
+//added enzyme utils
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -10,13 +14,19 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-afterEach(rt1.cleanup);
+const wrapper = shallow(<Players/>);
 
-test('renders without crashing', () => {
-  rt1.render(<App />);
-});
 
-test('Navbar displayed', () => {
-  const { getByTestId } = rt1.render(<App />);
-  getByTestId(/navbar/i)
+describe('testing players component', () => {
+  let wrapper;
+  beforeEach(() => { wrapper = shallow(<Players/>); })
+
+  it('includes 1 div with id players', () => {
+    expect(wrapper.find('id.players')).to.have.lengthOf(1);
+  });
+
+  it('includes 1 div with class players', () => {
+    expect(wrapper.find('class.players').text()).to.be.equal('info');
+  });
+
 })

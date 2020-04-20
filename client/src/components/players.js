@@ -23,6 +23,7 @@ export class Players extends React.Component {
             <div data-testid="player">
                 {this.state.player.map(p => 
                     <div className="players" key={p.id}>
+                    info
                     <h2>Name: {p.name}</h2>
                     <h2>Country: {p.name}</h2>
                     <h2>Searches: {p.searches}</h2>
